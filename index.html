@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Majadly – Home</title>
+  <meta name="description" content="Welcome to Majadly – articles, guides, and resources." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="index.html" class="site-logo" aria-label="Majadly – Home">Majadly</a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="articles/multiple-player-types.html">Articles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ MAIN ════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Welcome to Majadly</h1>
+      <p>Articles, guides, and in-depth resources—all in one place.</p>
+      <a href="articles/multiple-player-types.html" class="btn">Browse Articles</a>
+    </section>
+
+    <!-- Featured articles -->
+    <section class="cards-section container" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Articles</h2>
+      <div class="cards-grid">
+
+        <article class="card">
+          <h3><a href="articles/multiple-player-types.html">Multiple Player Types</a></h3>
+          <p>
+            An overview of the different player types available in a modern media platform,
+            including video, audio, image-gallery, and interactive players.
+          </p>
+          <a href="articles/multiple-player-types.html">Read article →</a>
+        </article>
+
+        <!-- Placeholder cards – replace with real content as needed -->
+        <article class="card">
+          <h3>Getting Started</h3>
+          <p>Learn how to set up your environment and publish your first page with GitHub Pages.</p>
+        </article>
+
+        <article class="card">
+          <h3>Responsive Layouts</h3>
+          <p>Tips and patterns for building mobile-friendly layouts with pure CSS grid and flexbox.</p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>
+        &copy; <span id="year"></span> Majadly &middot;
+        <a href="https://github.com/salahmajadly/majadly.github.io" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
