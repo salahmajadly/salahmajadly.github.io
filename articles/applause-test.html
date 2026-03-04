@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Applause Test Page – Majadly</title>
+  <meta name="description" content="Applause test page featuring Kaltura player types: video, audio, thumbnail, quiz, interactive, accessibility, and more." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    .embed-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .embed-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .embed-container--audio {
+      padding-top: 0;
+      height: 90px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .embed-container--audio iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .quick-note {
+      background: var(--color-accent);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .quick-note h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+    .quick-note ol {
+      padding-left: 1.25rem;
+      margin-bottom: 0;
+    }
+    .quick-note ol li {
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
+    }
+    .quick-note ol li ol {
+      list-style: lower-alpha;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-logo" aria-label="Majadly – Home">Majadly</a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="multiple-player-types.html">Articles</a></li>
+          <li><a href="applause-test.html" aria-current="page">Applause Test</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ MAIN ════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><span>Applause Test Page</span></li>
+      </ol>
+    </nav>
+
+    <!-- Article layout: TOC sidebar + body -->
+    <div class="article-layout container">
+
+      <!-- ── Table of Contents ── -->
+      <aside aria-labelledby="toc-heading">
+        <nav class="toc" id="toc" aria-labelledby="toc-heading">
+          <h2 id="toc-heading">On this page</h2>
+          <ol>
+            <li><a href="#overview">Multiple Player Types</a></li>
+            <li><a href="#video-player">Video Player</a></li>
+            <li><a href="#audio-player">Audio Player</a></li>
+            <li><a href="#thumbnail-player">Thumbnail Player</a></li>
+            <li><a href="#quiz-player">Quiz Player</a></li>
+            <li><a href="#call-to-actions">Call to Actions</a></li>
+            <li><a href="#hotspots">Hotspots</a></li>
+            <li><a href="#extended-audio">Extended Audio Description</a></li>
+            <li><a href="#dual-player">Dual Player</a></li>
+            <li><a href="#banner-overlay">Banner Overlay</a></li>
+            <li><a href="#captions">Captions</a></li>
+            <li><a href="#summary-chapters">Summary &amp; Chapters</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <!-- ── Article body ── -->
+      <article class="article-body">
+
+        <header class="article-header">
+          <h1>Applause Test Page</h1>
+        </header>
+
+        <!-- Quick Note -->
+        <div class="quick-note" role="note">
+          <h2>Quick Note:</h2>
+          <ol>
+            <li>The only thing that needs to be tested is the players on this page. The rest is not related to Kaltura.</li>
+            <li>We have 12 players included in the scope with different plugins
+              <ol>
+                <li>One player that looks different in the audio player.</li>
+                <li>The rest share the same core controls (Play, Settings, Seek, Volume, Full Screen, etc.). Please be mindful of shared UI/components to avoid reporting duplicate issues across players (this is also noted in the walkthrough video).</li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+
+        <!-- 1. Multiple Player Types Overview -->
+        <section class="article-section" id="overview" aria-labelledby="overview-heading">
+          <h2 id="overview-heading">Multiple Player Types</h2>
+          <p>
+            Kaltura supports multiple player types designed for different use cases—video, audio, quizzes,
+            interactive experiences, and more. Each player comes with a rich set of features that can be
+            enabled, configured, or extended to match specific technical, branding, and user experience
+            requirements.
+          </p>
+          <p>
+            This flexibility allows organizations to tailor playback behavior, interactivity, performance
+            optimizations, and integrations without compromising consistency or scalability. Whether the
+            goal is faster page loads, deeper engagement, or specialized learning and marketing experiences,
+            Kaltura players can be customized to fit a wide range of workflows and audience needs.
+          </p>
+        </section>
+
+        <!-- 2. Video Player without autoplay -->
+        <section class="article-section" id="video-player" aria-labelledby="video-player-heading">
+          <h2 id="video-player-heading">Video Player without Autoplay</h2>
+          <p>
+            The Kaltura Video Player is highly customizable, allowing organizations to adapt the player
+            to their exact technical, branding, and user experience requirements. From UI layout, controls,
+            and themes to playback behavior, performance optimizations, and interactive features, every
+            aspect of the player can be configured or extended.
+          </p>
+          <p>
+            This flexibility makes it possible to support a wide range of use cases—from simple video
+            playback to rich, interactive, and data-driven experiences—while maintaining consistency
+            across platforms and devices. The result is a player that fits seamlessly into existing
+            applications and workflows, rather than forcing teams to adapt to a fixed experience.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Video Player Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Video Player without Autoplay">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 3. Audio Player -->
+        <section class="article-section" id="audio-player" aria-labelledby="audio-player-heading">
+          <h2 id="audio-player-heading">Audio Player</h2>
+          <p>
+            The Kaltura Audio Player provides a streamlined way to deliver audio-only content with
+            optimal performance and accessibility. By loading a lightweight player tailored for audio,
+            it reduces bandwidth usage and page load impact compared to full video players, making it
+            ideal for podcasts, lectures, and on-the-go listening.
+          </p>
+          <div class="embed-container--audio">
+            <!-- Kaltura Audio Player Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_y4zxbefn&config%5Bplayback%5D%5BautoPlay%5D=false"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Audio Player">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 4. Thumbnail Player -->
+        <section class="article-section" id="thumbnail-player" aria-labelledby="thumbnail-player-heading">
+          <h2 id="thumbnail-player-heading">Thumbnail Player</h2>
+          <p>
+            The main advantage of using thumbnail embeds on Kaltura players is performance
+            optimization. By loading a lightweight thumbnail instead of the full player on initial
+            page load, the player is only initialized when the user interacts with it. This
+            significantly reduces network traffic, improves page load time, and lowers resource
+            consumption, especially on pages with multiple videos or for users on limited bandwidth
+            or mobile networks.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Thumbnail Player Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false&config%5Bui%5D%5BthumbnailUrl%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Thumbnail Player">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 5. Quiz Player -->
+        <section class="article-section" id="quiz-player" aria-labelledby="quiz-player-heading">
+          <h2 id="quiz-player-heading">Quiz Player</h2>
+          <p>
+            The Kaltura Quiz Player enhances video from a passive viewing experience into an
+            interactive learning moment. By embedding questions directly into the video, it keeps
+            viewers engaged, reinforces key concepts in real time, and improves knowledge retention.
+            Quizzes encourage active participation, help validate understanding, and provide
+            immediate feedback to learners.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Quiz Player Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_b5wx3cct&config%5Bplayback%5D%5BautoPlay%5D=false"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Quiz Player">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 6. Call to Actions inside the player -->
+        <section class="article-section" id="call-to-actions" aria-labelledby="call-to-actions-heading">
+          <h2 id="call-to-actions-heading">Call to Actions Inside the Player</h2>
+          <p>
+            Calls to Action (CTAs) inside the video player turn viewer attention into meaningful
+            outcomes at the moment of highest engagement. By presenting prompts directly within the
+            video—such as links, buttons, or next steps—CTAs reduce friction and guide viewers to
+            take action without leaving the experience.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Player with Call to Actions Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_u6he2ee7&config%5Bplayback%5D%5BautoPlay%5D=false"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Player with Call to Actions">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 7. Hotspots inside the player -->
+        <section class="article-section" id="hotspots" aria-labelledby="hotspots-heading">
+          <h2 id="hotspots-heading">Hotspots Inside the Player</h2>
+          <p>
+            Hotspots inside the video player add an interactive layer that transforms video from a
+            linear experience into an exploratory one. By placing clickable or informational elements
+            directly on the video at precise moments, hotspots let viewers access additional context,
+            resources, or actions without interrupting playback.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Player with Hotspots Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_u6he2ee7&config%5Bplayback%5D%5BautoPlay%5D=false&config%5Bhotspots%5D%5Benabled%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Player with Hotspots">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 8. Video with Extended Audio Description -->
+        <section class="article-section" id="extended-audio" aria-labelledby="extended-audio-heading">
+          <h2 id="extended-audio-heading">Video with Extended Audio Description</h2>
+          <p>
+            Extended audio description enhances accessibility by providing richer, more detailed
+            narration of visual elements that are essential to understanding the content. When enabled
+            on the player, it allows additional descriptive audio to be inserted—often with brief
+            pauses in playback—so viewers who are blind or visually impaired can fully follow
+            on-screen actions, context, and visual cues.
+          </p>
+          <p>
+            By supporting extended audio description, the player helps organizations meet
+            accessibility standards while delivering a more inclusive and equitable viewing experience.
+            It ensures that visual storytelling, demonstrations, and on-screen information are
+            accessible to all audiences without compromising comprehension or content quality.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Player with Extended Audio Description Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false&config%5BextendedAudioDescription%5D%5Benabled%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Video Player with Extended Audio Description">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 9. Dual Player -->
+        <section class="article-section" id="dual-player" aria-labelledby="dual-player-heading">
+          <h2 id="dual-player-heading">Dual Player</h2>
+          <p>
+            Kaltura supports dual player functionality, enabling two synchronized video streams to
+            play simultaneously within a single player. This is ideal for use cases such as sign
+            language interpretation, picture-in-picture presentations, or multi-angle recordings.
+          </p>
+          <p>
+            With dual players, viewers can watch the main content while also seeing a secondary
+            feed—like a sign language interpreter—without missing any part of the original video.
+            This enhances accessibility, inclusivity, and engagement, while giving content owners
+            the flexibility to deliver richer, more user-friendly viewing experiences.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Dual Player Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false&config%5BdualScreen%5D%5Benabled%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Dual Player">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 10. Player with Banner Overlay -->
+        <section class="article-section" id="banner-overlay" aria-labelledby="banner-overlay-heading">
+          <h2 id="banner-overlay-heading">Player with Banner Overlay</h2>
+          <p>
+            The banner overlay on the Kaltura player provides a clear and non-intrusive way to
+            communicate important information directly within the viewing experience. By displaying
+            contextual messages—such as disclaimers—on top of the video, banners ensure visibility
+            without requiring viewers to leave or interrupt playback.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Player with Banner Overlay Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false&config%5Bbanner%5D%5Benabled%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Player with Banner Overlay">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 11. Player with Captions -->
+        <section class="article-section" id="captions" aria-labelledby="captions-heading">
+          <h2 id="captions-heading">Player with Captions</h2>
+          <p>
+            Kaltura player captions provide accessible text for video and audio. Key features
+            include multi-language support, in-video search, and customizable appearance.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Player with Captions Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false&config%5Bcaptions%5D%5Benabled%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Player with Captions">
+            </iframe>
+          </div>
+        </section>
+
+        <!-- 12. Player with Summary & Chapters -->
+        <section class="article-section" id="summary-chapters" aria-labelledby="summary-chapters-heading">
+          <h2 id="summary-chapters-heading">Player with Summary &amp; Chapters</h2>
+          <p>
+            Kaltura's Summary &amp; Chapters feature, powered by AI (Content Lab), enhances video
+            navigation by automatically generating searchable, clickable segments and content
+            overviews. It supports manual editing of timestamps, titles, and descriptions, allowing
+            users to create custom, interactive bookmarks for long-form content.
+          </p>
+          <div class="embed-container">
+            <!-- Kaltura Player with Summary & Chapters Embed -->
+            <iframe src="https://cdnapisec.kaltura.com/p/1674401/embedPlaykitJs/uiconf_id/55502052?iframeembed=true&entry_id=1_rcit7y3t&config%5Bplayback%5D%5BautoPlay%5D=false&config%5Bchapters%5D%5Benabled%5D=true"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen
+              allow="autoplay *; fullscreen *; encrypted-media *"
+              title="Kaltura Player with Summary and Chapters">
+            </iframe>
+          </div>
+        </section>
+
+      </article>
+    </div><!-- /.article-layout -->
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>
+        &copy; <span id="year"></span> Majadly &middot;
+        <a href="https://salahmajadly.github.io" rel="noopener">Site</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
