@@ -1,0 +1,1 @@
+# majadly.github.io
