@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiple Player Types – Majadly</title>
+  <meta name="description" content="An overview of the different player types available in a modern media platform: video, audio, image-gallery, interactive, and more." />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="../index.html" class="site-logo" aria-label="Majadly – Home">Majadly</a>
+      <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="multiple-player-types.html" aria-current="page">Articles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ MAIN ════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb container" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><span>Articles</span></li>
+        <li><span>Multiple Player Types</span></li>
+      </ol>
+    </nav>
+
+    <!-- Article layout: TOC sidebar + body -->
+    <div class="article-layout container">
+
+      <!-- ── Table of Contents ── -->
+      <aside aria-labelledby="toc-heading">
+        <nav class="toc" id="toc" aria-labelledby="toc-heading">
+          <h2 id="toc-heading">On this page</h2>
+          <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#video-player">Video Player</a></li>
+            <li><a href="#audio-player">Audio Player</a></li>
+            <li><a href="#image-gallery">Image Gallery Player</a></li>
+            <li><a href="#interactive-player">Interactive Player</a></li>
+            <li><a href="#comparison">Comparison Table</a></li>
+            <li><a href="#choosing">Choosing the Right Player</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <!-- ── Article body ── -->
+      <article class="article-body">
+
+        <header class="article-header">
+          <h1>Multiple Player Types</h1>
+          <p class="byline">
+            Published <time datetime="2024-01-01">January 2024</time> &middot; 7 min read
+          </p>
+        </header>
+
+        <!-- 1. Overview -->
+        <section class="article-section" id="overview" aria-labelledby="overview-heading">
+          <h2 id="overview-heading">Overview</h2>
+          <p>
+            Modern media platforms often need to present content in multiple formats—long-form video,
+            podcast audio, interactive slide-shows, or rich image galleries. Rather than building a
+            one-size-fits-all player, most platforms offer a <strong>family of specialised player
+            types</strong>, each optimised for a specific medium and user interaction pattern.
+          </p>
+          <p>
+            This article walks through the most common player types, describes their primary use cases,
+            and offers guidance on selecting the right one for your content.
+          </p>
+        </section>
+
+        <!-- 2. Video Player -->
+        <section class="article-section" id="video-player" aria-labelledby="video-player-heading">
+          <h2 id="video-player-heading">Video Player</h2>
+          <p>
+            The <span class="player-badge">Video</span> player is the most widely used type. It
+            renders an HTML5 <code>&lt;video&gt;</code> element with a custom control bar, closed-caption
+            support, and optional chapter markers.
+          </p>
+
+          <h3>Key features</h3>
+          <ul>
+            <li>Adaptive bitrate streaming (HLS / DASH)</li>
+            <li>Closed captions &amp; subtitles (WebVTT)</li>
+            <li>Picture-in-picture and full-screen modes</li>
+            <li>Chapter markers &amp; thumbnail previews on scrubbing</li>
+            <li>Autoplay, mute-on-load, and loop controls</li>
+          </ul>
+
+          <h3>Typical use cases</h3>
+          <p>
+            Long-form editorial content, tutorials, product demos, live streams, and anything that
+            benefits from visual playback with user-controlled timelines.
+          </p>
+        </section>
+
+        <!-- 3. Audio Player -->
+        <section class="article-section" id="audio-player" aria-labelledby="audio-player-heading">
+          <h2 id="audio-player-heading">Audio Player</h2>
+          <p>
+            The <span class="player-badge">Audio</span> player surfaces an HTML5 <code>&lt;audio&gt;</code>
+            element. Its minimal visual footprint lets the surrounding editorial content take centre stage
+            while still providing full playback controls.
+          </p>
+
+          <h3>Key features</h3>
+          <ul>
+            <li>Compact single-row or card layout</li>
+            <li>Playback speed controls (0.75×–2×)</li>
+            <li>Skip forward / backward (15 s, 30 s)</li>
+            <li>Playlist / episode queue support</li>
+            <li>Transcript toggle (linked WebVTT)</li>
+          </ul>
+
+          <h3>Typical use cases</h3>
+          <p>
+            Podcasts, audio interviews, ambient soundscapes, music previews, and accessibility-first
+            content where a text transcript accompanies the audio.
+          </p>
+        </section>
+
+        <!-- 4. Image Gallery -->
+        <section class="article-section" id="image-gallery" aria-labelledby="image-gallery-heading">
+          <h2 id="image-gallery-heading">Image Gallery Player</h2>
+          <p>
+            The <span class="player-badge">Gallery</span> player renders a sequence of images with
+            navigation arrows, optional thumbnails strip, and keyboard/swipe support. It does not
+            use a media element but shares the same player API.
+          </p>
+
+          <h3>Key features</h3>
+          <ul>
+            <li>Lazy-loaded full-resolution images</li>
+            <li>Thumbnail strip with active state indicator</li>
+            <li>Caption overlay with optional credits</li>
+            <li>Keyboard navigation (←/→) and touch swipe</li>
+            <li>Lightbox / full-screen expand mode</li>
+          </ul>
+
+          <h3>Typical use cases</h3>
+          <p>
+            Photo essays, product image sets, event galleries, and illustrated how-to guides where a
+            sequential visual narrative is valuable.
+          </p>
+        </section>
+
+        <!-- 5. Interactive Player -->
+        <section class="article-section" id="interactive-player" aria-labelledby="interactive-player-heading">
+          <h2 id="interactive-player-heading">Interactive Player</h2>
+          <p>
+            The <span class="player-badge">Interactive</span> player embeds a rich media experience
+            built on an <code>&lt;iframe&gt;</code> or WebComponent wrapper. It communicates with the
+            host page through a postMessage API.
+          </p>
+
+          <h3>Key features</h3>
+          <ul>
+            <li>Quiz overlays &amp; branching paths mid-video</li>
+            <li>Hotspot annotations on paused frames</li>
+            <li>360° / VR video via WebXR</li>
+            <li>Real-time data visualisations</li>
+            <li>Cross-origin sandbox with permission policies</li>
+          </ul>
+
+          <h3>Typical use cases</h3>
+          <p>
+            E-learning modules, interactive product tours, shoppable video experiences, and immersive
+            branded storytelling.
+          </p>
+        </section>
+
+        <!-- 6. Comparison Table -->
+        <section class="article-section" id="comparison" aria-labelledby="comparison-heading">
+          <h2 id="comparison-heading">Comparison Table</h2>
+          <p>The table below summarises the key differences between the four player types.</p>
+          <table>
+            <caption>Player type feature comparison</caption>
+            <thead>
+              <tr>
+                <th scope="col">Player</th>
+                <th scope="col">Format</th>
+                <th scope="col">Timeline scrubbing</th>
+                <th scope="col">Captions</th>
+                <th scope="col">Interactivity</th>
+                <th scope="col">Accessibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="player-badge">Video</span></td>
+                <td>MP4 / HLS / DASH</td>
+                <td>Yes</td>
+                <td>WebVTT</td>
+                <td>Chapters only</td>
+                <td>ARIA + keyboard</td>
+              </tr>
+              <tr>
+                <td><span class="player-badge">Audio</span></td>
+                <td>MP3 / AAC / Opus</td>
+                <td>Yes</td>
+                <td>Transcript toggle</td>
+                <td>Speed controls</td>
+                <td>ARIA + keyboard</td>
+              </tr>
+              <tr>
+                <td><span class="player-badge">Gallery</span></td>
+                <td>JPEG / WebP / AVIF</td>
+                <td>N/A</td>
+                <td>Caption overlays</td>
+                <td>Swipe / keyboard</td>
+                <td>alt text + ARIA</td>
+              </tr>
+              <tr>
+                <td><span class="player-badge">Interactive</span></td>
+                <td>iframe / WebComponent</td>
+                <td>Yes (conditional)</td>
+                <td>Custom</td>
+                <td>Full</td>
+                <td>Depends on embed</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- 7. Choosing -->
+        <section class="article-section" id="choosing" aria-labelledby="choosing-heading">
+          <h2 id="choosing-heading">Choosing the Right Player</h2>
+          <p>Use the following decision guide when selecting a player type for new content:</p>
+          <ol>
+            <li>
+              <strong>Is the primary medium a moving image with sound?</strong>
+              Choose the <span class="player-badge">Video</span> player.
+            </li>
+            <li>
+              <strong>Is the primary medium audio-only?</strong>
+              Choose the <span class="player-badge">Audio</span> player; pair with a transcript for
+              accessibility.
+            </li>
+            <li>
+              <strong>Is the content a sequence of still images?</strong>
+              Choose the <span class="player-badge">Gallery</span> player.
+            </li>
+            <li>
+              <strong>Does the content require user input, quizzes, or branching paths?</strong>
+              Choose the <span class="player-badge">Interactive</span> player.
+            </li>
+          </ol>
+          <p>
+            When in doubt, prefer the simpler player type. Adding interactivity later is easier than
+            stripping it out, and simpler players have better browser support and accessibility baselines.
+          </p>
+        </section>
+
+      </article>
+    </div><!-- /.article-layout -->
+  </main>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>
+        &copy; <span id="year"></span> Majadly &middot;
+        <a href="https://github.com/salahmajadly/majadly.github.io" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
