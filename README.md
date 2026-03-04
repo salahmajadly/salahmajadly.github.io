@@ -1,4 +1,4 @@
-# majadly.github.io
+# salahmajadly.github.io
 
 Personal GitHub Pages user site, published at **https://salahmajadly.github.io**.
 
