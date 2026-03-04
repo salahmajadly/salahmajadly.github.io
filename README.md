@@ -1,6 +1,6 @@
 # majadly.github.io
 
-Personal GitHub Pages user site, published at **https://majadly.github.io**.
+Personal GitHub Pages user site, published at **https://salahmajadly.github.io**.
 
 ---
 
